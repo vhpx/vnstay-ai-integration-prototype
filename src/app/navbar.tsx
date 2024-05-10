@@ -45,7 +45,7 @@ export default function Navbar() {
           >
             About us
           </Link>
-          <button className="text-white hover:bg-brand/80 transition h-fit px-2 py-1 mb-2.5 rounded bg-brand">
+          <button className="text-white uppercase hover:bg-brand/80 transition h-fit px-4 py-2 mb-1.5 rounded bg-brand">
             Customized Tours
           </button>
         </div>
