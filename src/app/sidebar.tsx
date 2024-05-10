@@ -11,7 +11,7 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className="border-r h-full text-sm p-4 flex flex-col justify-between gap-2 w-[32rem]">
+    <div className="border-r h-full text-sm p-4 flex flex-col justify-between gap-2 w-1/4">
       <div className="grid gap-2">
         <button className="flex items-center gap-2 text-white hover:opacity-80 transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold">
           <PlusCircle className="h-4 w-4" />
