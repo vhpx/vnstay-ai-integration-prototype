@@ -1,9 +1,17 @@
-import { Archive, ChevronDown, Ellipsis, Home, PlusCircle } from "lucide-react";
+import {
+  Archive,
+  ChevronDown,
+  Ellipsis,
+  Home,
+  Info,
+  PlusCircle,
+  Settings,
+} from "lucide-react";
 import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className="border-r h-full p-4 flex flex-col justify-between gap-2 w-[32rem]">
+    <div className="border-r h-full text-sm p-4 flex flex-col justify-between gap-2 w-[32rem]">
       <div className="grid gap-2">
         <button className="flex items-center gap-2 text-white hover:opacity-80 transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold">
           <PlusCircle className="h-4 w-4" />
@@ -59,11 +67,11 @@ export default function Sidebar() {
             Main
           </button>
           <button className="flex items-center gap-2 text-brand transition h-fit border-2 border-transparent hover:border-brand rounded px-4 py-1 font-semibold">
-            <Home className="h-4 w-4" />
+            <Settings className="h-4 w-4" />
             Settings
           </button>
           <button className="flex items-center gap-2 text-brand transition h-fit border-2 border-transparent hover:border-brand rounded px-4 py-1 font-semibold">
-            <Home className="h-4 w-4" />
+            <Info className="h-4 w-4" />
             Help
           </button>
         </div>
