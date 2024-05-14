@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 import NavbarPadding from "./navbar-padding";
 import { ThemeProvider } from "./theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Vietnamstay Generative AI",
@@ -20,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`flex flex-col min-h-screen ${inter.className}`}>
+      <body className={`flex flex-col min-h-screen ${font.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

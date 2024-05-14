@@ -35,7 +35,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Solo"
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <UserCircle className="w-8 h-8 inline-block" />
@@ -51,7 +51,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Partner"
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <HeartHandshake className="w-8 h-8 inline-block" />
@@ -67,7 +67,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Family"
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <UsersRound className="w-8 h-8 inline-block" />
@@ -83,7 +83,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Friends"
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <FlameKindling className="w-8 h-8 inline-block" />
@@ -105,7 +105,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Pets")
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <PawPrint className="w-8 h-8 inline-block" />
@@ -123,7 +123,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Children")
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <Baby className="w-8 h-8 inline-block" />
@@ -141,7 +141,7 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Elderly")
               ? "border-foreground opacity-100"
-              : "opacity-50 hover:opacity-100"
+              : "opacity-50 md:hover:opacity-100"
           }`}
         >
           <Sparkles className="w-8 h-8 inline-block" />

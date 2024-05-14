@@ -16,7 +16,7 @@ export default function Home() {
       <div className="mt-8 text-2xl w-full max-w-lg md:max-w-full grid md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 gap-4">
         <Link
           href="/trip-duration"
-          className="relative uppercase col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+          className="relative uppercase col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
         >
           <Image
             src="/vietnam.png"
@@ -33,7 +33,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
         >
           <Image
             src="/cambodia.png"
@@ -50,7 +50,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
         >
           <Image
             src="/laos.png"
@@ -67,7 +67,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
         >
           <Image
             src="/thailand.png"
@@ -84,7 +84,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
         >
           <Image
             src="/myanmar.png"

@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="flex flex-col gap-3 items-end">
         {/* <div className="flex gap-3 text-brand items-center font-semibold">
           <div>Live Chat | Call: +84 915 118 628</div>
-          <button className="px-4 py-1 rounded border-brand border-2 hover:bg-brand hover:text-white transition text-brand">
+          <button className="px-4 py-1 rounded border-brand border-2 md:hover:bg-brand md:hover:text-white transition text-brand">
             English
           </button>
         </div> */}
@@ -35,37 +35,37 @@ export default function Navbar() {
         <div className="flex gap-4 uppercase items-end font-bold">
           <Link
             href="https://www.vietnamstay.com"
-            className="hidden lg:block hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent hover:border-brand-hover"
+            className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
           >
             Home
           </Link>
           <Link
             href="#"
-            className="hidden lg:block hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent hover:border-brand-hover"
+            className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
           >
             Destinations
           </Link>
           <Link
             href="#"
-            className="hidden lg:block hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent hover:border-brand-hover"
+            className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
           >
             Tours
           </Link>
           <Link
             href="https://www.vietnamstay.com/vietnam-excursions"
-            className="hidden lg:block hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent hover:border-brand-hover"
+            className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
           >
             Excursions
           </Link>
           <Link
             href="https://www.vietnamstay.com/about-vietnamstay"
-            className="hidden lg:block hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent hover:border-brand-hover"
+            className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
           >
             About us
           </Link>
 
           <div className="mb-3 flex items-center gap-2">
-            <button className="text-white hidden md:block uppercase hover:bg-brand-hover transition h-fit px-4 py-2 rounded bg-brand">
+            <button className="text-white hidden md:block uppercase md:hover:bg-brand-hover transition h-fit px-4 py-2 rounded bg-brand">
               Chat with AI
             </button>
 

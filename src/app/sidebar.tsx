@@ -16,7 +16,7 @@ export default function Sidebar() {
       <div className="grid gap-2">
         <Link
           href="/"
-          className="flex items-center gap-2 text-white hover:bg-brand-hover transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold"
+          className="flex items-center gap-2 text-white md:hover:bg-brand-hover transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold"
         >
           <PlusCircle className="h-4 w-4" />
           New plan
@@ -24,7 +24,7 @@ export default function Sidebar() {
 
         <div className="font-bold text-lg mt-2">Your plans</div>
 
-        <button className="flex items-center hover:border-brand dark:hover:border-foreground hover:text-brand-hover dark:hover:text-foreground text-foreground/70 font-semibold transition gap-2 justify-between border rounded px-4 py-1">
+        <button className="flex items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 font-semibold transition gap-2 justify-between border rounded px-4 py-1">
           <div className="flex items-center gap-2">
             <Archive className="h-4 w-4" />
             <div>History</div>
@@ -32,7 +32,7 @@ export default function Sidebar() {
           <ChevronDown className="h-4 w-4" />
         </button>
 
-        <button className="grid gap-1 items-center hover:border-brand dark:hover:border-foreground hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
+        <button className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
           <div className="font-semibold line-clamp-1 text-start">
             Your trip to Ho Chi Minh City for 3 days
           </div>
@@ -44,7 +44,7 @@ export default function Sidebar() {
           </div>
         </button>
 
-        <button className="grid gap-1 items-center hover:border-brand dark:hover:border-foreground hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
+        <button className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
           <div className="font-semibold line-clamp-1 text-start">
             Your trip to Phnom Penh for 7 days for a family
           </div>
@@ -56,7 +56,7 @@ export default function Sidebar() {
           </div>
         </button>
 
-        <button className="grid gap-1 items-center font-semibold hover:border-brand dark:hover:border-foreground hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
+        <button className="grid gap-1 items-center font-semibold md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
           <div className="flex items-center gap-2">
             <Ellipsis className="h-4 w-4" />
             <div>View more</div>
@@ -66,15 +66,15 @@ export default function Sidebar() {
 
       <div className="flex items-center justify-center">
         <div className="p-1 flex border border-brand/20 dark:border-border rounded just gap-1">
-          <button className="flex items-center gap-2 border-2 border-transparent text-white hover:bg-brand-hover transition h-fit bg-brand rounded px-4 py-1 font-semibold">
+          <button className="flex items-center gap-2 border-2 border-transparent text-white md:hover:bg-brand-hover transition h-fit bg-brand rounded px-4 py-1 font-semibold">
             <Home className="h-4 w-4" />
             Main
           </button>
-          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent hover:text-white hover:bg-brand-hover rounded px-4 py-1 font-semibold">
+          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent md:hover:text-white md:hover:bg-brand-hover rounded px-4 py-1 font-semibold">
             <Settings className="h-4 w-4" />
             Settings
           </button>
-          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent hover:text-white hover:bg-brand-hover rounded px-4 py-1 font-semibold">
+          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent md:hover:text-white md:hover:bg-brand-hover rounded px-4 py-1 font-semibold">
             <Info className="h-4 w-4" />
             Help
           </button>

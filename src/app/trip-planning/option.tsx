@@ -19,7 +19,7 @@ export default function PlanningOption({
       className={`grid gap-2 p-4 rounded-lg border-2 transition ${
         presetOptions.includes(label)
           ? "border-foreground opacity-100"
-          : "opacity-50 hover:opacity-100"
+          : "opacity-50 md:hover:opacity-100"
       }`}
     >
       <div className="font-semibold">{label}</div>
