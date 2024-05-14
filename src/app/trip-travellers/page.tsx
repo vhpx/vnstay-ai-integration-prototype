@@ -1,7 +1,5 @@
 "use client";
 
-import { DateRange } from "@/components/date-range-picker";
-import { Button } from "@/components/ui/button";
 import {
   Baby,
   FlameKindling,
@@ -11,19 +9,16 @@ import {
   UserCircle,
   UsersRound,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ContinueButton from "../continue-button";
 
 export default function Home() {
-  const router = useRouter();
-
   const [travellers, setTravellers] = useState<string>("");
   const [specialRequests, setSpecialRequests] = useState<string[]>([]);
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
         Who&apos;s coming with you?
       </div>
 
@@ -35,8 +30,8 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Solo"
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:300ms]`}
         >
           <UserCircle className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Solo</div>
@@ -51,8 +46,8 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Partner"
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:600ms]`}
         >
           <HeartHandshake className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Partner</div>
@@ -67,8 +62,8 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Family"
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:900ms]`}
         >
           <UsersRound className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Family</div>
@@ -83,15 +78,15 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             travellers === "Friends"
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:1200ms]`}
         >
           <FlameKindling className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Friends</div>
         </button>
       </div>
 
-      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:1500ms]">
         Any special requests?
       </div>
 
@@ -105,8 +100,8 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Pets")
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:1800ms]`}
         >
           <PawPrint className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Pets</div>
@@ -123,8 +118,8 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Children")
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:2100ms]`}
         >
           <Baby className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Children</div>
@@ -141,15 +136,21 @@ export default function Home() {
           className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
             specialRequests.includes("Elderly")
               ? "border-foreground opacity-100"
-              : "opacity-50 md:hover:opacity-100"
-          }`}
+              : "opacity-0"
+          } animate-slide-in opacity-0 [--slide-in-delay:2400ms]`}
         >
           <Sparkles className="w-8 h-8 inline-block" />
           <div className="font-semibold text-2xl">Elderly</div>
         </button>
       </div>
 
-      <ContinueButton href="/trip-planning" disabled={!travellers} />
+      <div className="animate-slide-in opacity-0 [--slide-in-delay:2700ms] w-full max-w-4xl">
+        <ContinueButton
+          href="/trip-planning"
+          className="max-w-4xl"
+          disabled={!travellers}
+        />
+      </div>
     </div>
   );
 }

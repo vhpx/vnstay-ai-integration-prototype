@@ -1,6 +1,9 @@
+"use client";
+
 import {
   Archive,
   ChevronDown,
+  ChevronUp,
   Ellipsis,
   Home,
   Info,
@@ -8,11 +11,13 @@ import {
   Settings,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Sidebar() {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+
   return (
-    <div className="border-r hidden h-full text-sm p-4 md:flex flex-col justify-between gap-2 w-[24rem] lg:w-[32rem]">
+    <div className="border-r hidden h-[calc(100vh-67px)] text-sm p-4 md:flex flex-col justify-between gap-2 w-[24rem] lg:w-[32rem]">
       <div className="grid gap-2">
         <Link
           href="/"
@@ -24,44 +29,65 @@ export default function Sidebar() {
 
         <div className="font-bold text-lg mt-2">Your plans</div>
 
-        <button className="flex items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 font-semibold transition gap-2 justify-between border rounded px-4 py-1">
+        <button
+          onClick={() => setCollapsed((c) => !c)}
+          className="flex items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 font-semibold transition gap-2 justify-between border rounded px-4 py-1"
+        >
           <div className="flex items-center gap-2">
             <Archive className="h-4 w-4" />
             <div>History</div>
           </div>
-          <ChevronDown className="h-4 w-4" />
+          <ChevronUp
+            className={`h-4 w-4 ${
+              collapsed ? "transform rotate-180" : ""
+            } transition`}
+          />
         </button>
 
-        <button className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
-          <div className="font-semibold line-clamp-1 text-start">
-            Your trip to Ho Chi Minh City for 3 days
-          </div>
-          <div className="line-clamp-2 text-start opacity-90">
-            Ho Chi Minh City offers a vibrant and bustling atmosphere, perfect
-            for solo travelers like yourself. Explore the city&apos;s rich
-            history and culture, visit the famous landmarks, and indulge in the
-            delicious local cuisine.
-          </div>
-        </button>
+        <div
+          className={`grid gap-2 ${
+            collapsed
+              ? "opacity-0 pointer-events-none"
+              : "opacity-100 pointer-events-auto"
+          } transition duration-300`}
+        >
+          <Link
+            href="/trip-details?city=hcmc"
+            className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1"
+          >
+            <div className="font-semibold line-clamp-1 text-start">
+              Your trip to Ho Chi Minh City for 3 days
+            </div>
+            <div className="line-clamp-2 text-start opacity-90">
+              Ho Chi Minh City offers a vibrant and bustling atmosphere, perfect
+              for solo travelers like yourself. Explore the city&apos;s rich
+              history and culture, visit the famous landmarks, and indulge in
+              the delicious local cuisine.
+            </div>
+          </Link>
 
-        <button className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
-          <div className="font-semibold line-clamp-1 text-start">
-            Your trip to Phnom Penh for 7 days for a family
-          </div>
-          <div className="line-clamp-2 text-start opacity-90">
-            Phnom Penh, the capital city of Cambodia, is a fascinating
-            destination for your 7-day family trip. Explore the city&apos;s rich
-            history, visit the famous landmarks, and indulge in the delicious
-            local cuisine.
-          </div>
-        </button>
+          <Link
+            href="/trip-details?city=phnom_penh"
+            className="grid gap-1 items-center md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1"
+          >
+            <div className="font-semibold line-clamp-1 text-start">
+              Your trip to Phnom Penh for 7 days for a family
+            </div>
+            <div className="line-clamp-2 text-start opacity-90">
+              Phnom Penh, the capital city of Cambodia, is a fascinating
+              destination for your 7-day family trip. Explore the city&apos;s
+              rich history, visit the famous landmarks, and indulge in the
+              delicious local cuisine.
+            </div>
+          </Link>
 
-        <button className="grid gap-1 items-center font-semibold md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
-          <div className="flex items-center gap-2">
-            <Ellipsis className="h-4 w-4" />
-            <div>View more</div>
-          </div>
-        </button>
+          <button className="grid gap-1 items-center font-semibold md:hover:border-brand dark:hover:border-foreground md:hover:text-brand-hover dark:hover:text-foreground text-foreground/70 transition justify-between border rounded px-4 py-1">
+            <div className="flex items-center gap-2">
+              <Ellipsis className="h-4 w-4" />
+              <div>View more</div>
+            </div>
+          </button>
+        </div>
       </div>
 
       <div className="flex items-center justify-center">

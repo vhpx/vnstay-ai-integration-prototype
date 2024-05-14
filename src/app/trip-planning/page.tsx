@@ -1,8 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import PlanningOption from "./option";
 import ContinueButton from "../continue-button";
@@ -23,18 +21,16 @@ const presetPossibleOptions = [
 ];
 
 export default function Home() {
-  const router = useRouter();
-
   const [presetOptions, setPresetOptions] = useState<string[]>([]);
   const [options, setOptions] = useState<string>("");
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
         How do you want to spend your time?
       </div>
 
-      <div className="mt-4 max-w-4xl grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2 w-full">
+      <div className="mt-4 max-w-4xl grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2 w-full animate-slide-in opacity-0 [--slide-in-delay:300ms]">
         {presetPossibleOptions.map((label) => (
           <PlanningOption
             key={label}
@@ -45,11 +41,11 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:600ms]">
         Other options
       </div>
 
-      <div className="mt-4 relative max-w-4xl w-full">
+      <div className="mt-4 relative max-w-4xl w-full animate-slide-in opacity-0 [--slide-in-delay:900ms]">
         <Input
           id="planning-options"
           name="planning-options"
@@ -63,12 +59,16 @@ export default function Home() {
         </div>
       </div>
 
-      <ContinueButton
-        href="/trip-details"
-        label="Generate trip plan"
-        // disabled={!presetOptions.length}
-        disabled
-      />
+      <div className="max-w-4xl w-full animate-slide-in opacity-0 [--slide-in-delay:1200ms]">
+        <ContinueButton
+          href="/trip-details"
+          delay={2000}
+          label="Generate plan"
+          loadingLabel="Generating..."
+          className="max-w-4xl"
+          disabled={!presetOptions.length}
+        />
+      </div>
     </div>
   );
 }

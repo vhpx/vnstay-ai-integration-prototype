@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
@@ -32,7 +33,7 @@ export default function Navbar() {
           </button>
         </div> */}
 
-        <div className="flex gap-4 uppercase items-end font-bold">
+        <div className="flex gap-4 uppercase items-end font-semibold">
           <Link
             href="https://www.vietnamstay.com"
             className="hidden lg:block md:hover:text-brand dark:hover:text-foreground dark:text-foreground/70 pb-4 border-b-4 border-transparent md:hover:border-brand-hover"
@@ -65,9 +66,12 @@ export default function Navbar() {
           </Link>
 
           <div className="mb-3 flex items-center gap-2">
-            <button className="text-white hidden md:block uppercase md:hover:bg-brand-hover transition h-fit px-4 py-2 rounded bg-brand">
+            <Button
+              variant="brand"
+              className="hidden md:block uppercase transition h-fit px-4 py-2 font-semibold"
+            >
               Chat with AI
-            </button>
+            </Button>
 
             <ThemeToggle className="" />
           </div>

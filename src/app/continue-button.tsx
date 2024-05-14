@@ -1,16 +1,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function ContinueButton({
   label,
+  loadingLabel,
+  delay = 0,
   href,
+  className,
   disabled,
 }: {
   label?: string;
+  loadingLabel?: string;
+  delay?: number;
   href: string;
+  className?: string;
   disabled: boolean;
 }) {
   const router = useRouter();
@@ -18,14 +25,17 @@ export default function ContinueButton({
 
   return (
     <Button
-      className="mt-4 w-full max-w-lg"
+      className={cn("mt-4 w-full max-w-lg", className)}
       onClick={() => {
         setLoading(true);
-        router.push(href);
+
+        setTimeout(() => {
+          router.push(href);
+        }, delay);
       }}
       disabled={disabled || loading}
     >
-      {loading ? "Processing..." : label || "Continue"}
+      {loading ? loadingLabel || "Processing..." : label || "Continue"}
     </Button>
   );
 }

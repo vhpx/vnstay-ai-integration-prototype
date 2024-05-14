@@ -1,25 +1,21 @@
 "use client";
 
 import { DateRange, DateRangePicker } from "@/components/date-range-picker";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ContinueButton from "../continue-button";
 
 export default function Home() {
-  const router = useRouter();
-
   const [location, setLocation] = useState<string>("");
   const [range, setRange] = useState<DateRange>();
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
         Where are you from?
       </div>
 
-      <div className="mt-4 relative max-w-lg w-full">
+      <div className="mt-4 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:300ms]">
         <Input
           id="location"
           name="location"
@@ -30,23 +26,27 @@ export default function Home() {
         />
       </div>
 
-      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:600ms]">
         When are you going?
       </div>
 
-      <DateRangePicker
-        className="mt-4 w-full max-w-lg"
-        initialDateFrom={undefined}
-        initialDateTo={undefined}
-        onUpdate={(v) => setRange(v.range || v.rangeCompare)}
-        showCompare={false}
-        disabled={!location}
-      />
+      <div className="mt-4 w-full max-w-lg animate-slide-in opacity-0 [--slide-in-delay:900ms]">
+        <DateRangePicker
+          className="w-full"
+          initialDateFrom={undefined}
+          initialDateTo={undefined}
+          onUpdate={(v) => setRange(v.range || v.rangeCompare)}
+          showCompare={false}
+          disabled={!location}
+        />
+      </div>
 
-      <ContinueButton
-        href="/trip-travellers"
-        disabled={!location || !range?.from || !range?.to}
-      />
+      <div className="animate-slide-in opacity-0 [--slide-in-delay:1200ms] w-full max-w-lg">
+        <ContinueButton
+          href="/trip-travellers"
+          disabled={!location || !range?.from || !range?.to}
+        />
+      </div>
     </div>
   );
 }

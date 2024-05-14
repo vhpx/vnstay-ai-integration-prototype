@@ -31,9 +31,11 @@ export default function RootLayout({
         >
           <Navbar />
           <NavbarPadding>
-            <main className="grid md:flex flex-1 h-full min-h-full">
+            <main className="grid md:flex flex-1 min-h-full">
               <Sidebar />
-              {children}
+              <div className="overflow-y-auto h-[calc(100vh-67px)] w-full">
+                {children}
+              </div>
             </main>
           </NavbarPadding>
         </ThemeProvider>

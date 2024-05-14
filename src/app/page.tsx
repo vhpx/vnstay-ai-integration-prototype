@@ -5,18 +5,18 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
         Where do you want to go?
       </div>
 
-      <div className="mt-4 md:mt-8 relative max-w-lg w-full">
+      <div className="mt-4 md:mt-8 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:150ms]">
         <SearchBar />
       </div>
 
       <div className="mt-8 text-2xl w-full max-w-lg md:max-w-full grid md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 gap-4">
         <Link
           href="/trip-duration"
-          className="relative uppercase col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
+          className="relative uppercase col-span-2 xl:col-span-1 transition md:hover:-translate-y-1 animate-slide-in opacity-0 [--slide-in-delay:450ms]"
         >
           <Image
             src="/vietnam.png"
@@ -33,7 +33,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 transition md:hover:-translate-y-1 animate-slide-in opacity-0 [--slide-in-delay:600ms]"
         >
           <Image
             src="/cambodia.png"
@@ -50,7 +50,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 transition md:hover:-translate-y-1 animate-slide-in opacity-0 [--slide-in-delay:750ms]"
         >
           <Image
             src="/laos.png"
@@ -67,7 +67,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 transition md:hover:-translate-y-1 animate-slide-in opacity-0 [--slide-in-delay:900ms]"
         >
           <Image
             src="/thailand.png"
@@ -84,7 +84,7 @@ export default function Home() {
 
         <Link
           href="/trip-duration"
-          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 md:hover:opacity-100 transition md:hover:-translate-y-1"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 transition md:hover:-translate-y-1 animate-slide-in opacity-0 [--slide-in-delay:1050ms]"
         >
           <Image
             src="/myanmar.png"
