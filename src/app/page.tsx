@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mic, Send } from "lucide-react";
 import Image from "next/image";
+import SearchBar from "./search-bar";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,25 +10,14 @@ export default function Home() {
       </div>
 
       <div className="mt-4 md:mt-8 relative max-w-lg w-full">
-        <Input
-          placeholder="Search by city or town"
-          className="py-6"
-          type="text"
-          name="city"
-          id="city"
-        />
-        <div className="absolute right-2 flex top-[0.3rem] gap-1">
-          <Button size="icon" variant="ghost" className="p-1">
-            <Mic size={20} />
-          </Button>
-          <Button size="icon" variant="secondary">
-            <Send size={20} />
-          </Button>
-        </div>
+        <SearchBar />
       </div>
 
       <div className="mt-8 text-2xl grid md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 gap-4">
-        <button className="relative uppercase col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1">
+        <Link
+          href="/trip-duration"
+          className="relative uppercase col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+        >
           <Image
             src="/vietnam.png"
             width={200}
@@ -41,9 +29,12 @@ export default function Home() {
           <div className="absolute top-4 left-4 text-white font-semibold">
             vietnam
           </div>
-        </button>
+        </Link>
 
-        <button className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1">
+        <Link
+          href="/trip-duration"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+        >
           <Image
             src="/cambodia.png"
             width={200}
@@ -55,9 +46,12 @@ export default function Home() {
           <div className="absolute top-4 left-4 text-white font-semibold">
             cambodia
           </div>
-        </button>
+        </Link>
 
-        <button className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1">
+        <Link
+          href="/trip-duration"
+          className="relative uppercase lg:col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+        >
           <Image
             src="/laos.png"
             width={200}
@@ -69,9 +63,12 @@ export default function Home() {
           <div className="absolute top-4 left-4 text-white font-semibold">
             laos
           </div>
-        </button>
+        </Link>
 
-        <button className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1">
+        <Link
+          href="/trip-duration"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+        >
           <Image
             src="/thailand.png"
             width={200}
@@ -83,9 +80,12 @@ export default function Home() {
           <div className="absolute top-4 left-4 text-white font-semibold">
             thailand
           </div>
-        </button>
+        </Link>
 
-        <button className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1">
+        <Link
+          href="/trip-duration"
+          className="relative uppercase lg:col-span-3 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"
+        >
           <Image
             src="/myanmar.png"
             width={200}
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="absolute top-4 left-4 text-white font-semibold">
             myanmar
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   );

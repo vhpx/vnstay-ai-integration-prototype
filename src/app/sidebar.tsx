@@ -7,16 +7,20 @@ import {
   PlusCircle,
   Settings,
 } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function Sidebar() {
   return (
     <div className="border-r hidden h-full text-sm p-4 md:flex flex-col justify-between gap-2 w-[24rem] lg:w-[32rem]">
       <div className="grid gap-2">
-        <button className="flex items-center gap-2 text-white hover:bg-brand-hover transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-white hover:bg-brand-hover transition h-fit bg-brand rounded w-full px-4 py-2 font-semibold"
+        >
           <PlusCircle className="h-4 w-4" />
           New plan
-        </button>
+        </Link>
 
         <div className="font-bold text-lg mt-2">Your plans</div>
 
