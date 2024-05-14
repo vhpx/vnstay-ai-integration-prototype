@@ -22,7 +22,7 @@ export default function PlanningOption({
         presetOptions
           ? presetOptions.includes(label)
             ? "border-foreground opacity-100"
-            : "opacity-50"
+            : "opacity-50 md:hover:opacity-100"
           : "opacity-100 cursor-default"
       }`}
     >

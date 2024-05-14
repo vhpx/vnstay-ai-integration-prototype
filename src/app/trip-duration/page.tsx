@@ -30,7 +30,7 @@ export default function Home() {
         When are you going?
       </div>
 
-      <div className="mt-4 w-full max-w-lg animate-slide-in opacity-0 [--slide-in-delay:900ms]">
+      <div className="mt-4 w-full max-w-lg flex items-center justify-center animate-slide-in opacity-0 [--slide-in-delay:900ms]">
         <DateRangePicker
           className="w-full"
           initialDateFrom={undefined}
