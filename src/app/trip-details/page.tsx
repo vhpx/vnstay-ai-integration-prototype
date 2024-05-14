@@ -12,7 +12,11 @@ import {
   Church,
   Clock,
   Dumbbell,
+  Eye,
+  Flag,
   HeartHandshake,
+  Hotel,
+  Landmark,
   MapPin,
   Mic,
   ParkingCircle,
@@ -23,6 +27,7 @@ import {
   Star,
   ThumbsDown,
   ThumbsUp,
+  UtensilsCrossed,
   Wifi,
 } from "lucide-react";
 import Image from "next/image";
@@ -424,11 +429,14 @@ export default function Home({
         >
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   1
                 </div>
-                Giac Lam Pagoda
+                <div className="flex gap-2 items-center">
+                  <Church className="w-5 h-5 inline-block" />
+                  Giac Lam Pagoda
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -467,7 +475,9 @@ export default function Home({
                 known for its stunning architecture, intricate carvings, and
                 serene atmosphere.
               </div>
-              <Button variant="brand">Read more</Button>
+              <Button variant="brand" className="font-semibold underline">
+                Read more
+              </Button>
 
               <div className="flex gap-4 justify-between items-center mt-4">
                 <div>Was this recommendation useful?</div>
@@ -484,44 +494,56 @@ export default function Home({
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   2
                 </div>
-                A.dau Kitchen
+                <div className="flex gap-2 items-center">
+                  <UtensilsCrossed className="w-5 h-5 inline-block" />
+                  A.dau Kitchen
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   3
                 </div>
-                Museum of Vietnamese History
+                <div className="flex gap-2 items-center">
+                  <Landmark className="w-5 h-5 inline-block" />
+                  Museum of Vietnamese History
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   4
                 </div>
-                Emperor Jade Pagoda
+                <div className="flex gap-2 items-center">
+                  <Church className="w-5 h-5 inline-block" />
+                  Emperor Jade Pagoda
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   5
                 </div>
-                Secret Garden
+                <div className="flex gap-2 items-center">
+                  <UtensilsCrossed className="w-5 h-5 inline-block" />
+                  Secret Garden
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
@@ -563,55 +585,70 @@ export default function Home({
         >
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   1
                 </div>
-                Saigon Skydeck
+                <div className="flex gap-2 items-center">
+                  <Eye className="w-5 h-5 inline-block" />
+                  Saigon Skydeck
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   2
                 </div>
-                The Simple Café Le Lai
+                <div className="flex gap-2 items-center">
+                  <UtensilsCrossed className="w-5 h-5 inline-block" />
+                  The Simple Café Le Lai
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   3
                 </div>
-                Central Post Office
+                <div className="flex gap-2 items-center">
+                  <Hotel className="w-5 h-5 inline-block" />
+                  Central Post Office
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   4
                 </div>
-                Saigon Café - Seafood Buffet Restaurant
+                <div className="flex gap-2 items-center">
+                  <UtensilsCrossed className="w-5 h-5 inline-block" />
+                  Saigon Café - Seafood Buffet Restaurant
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
             <AccordionTrigger>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center font-semibold gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   5
                 </div>
-                The Venerable Thich Quang Duc Monument
+                <div className="flex gap-2 items-center">
+                  <Flag className="w-5 h-5 inline-block" />
+                  The Venerable Thich Quang Duc Monument
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent></AccordionContent>
