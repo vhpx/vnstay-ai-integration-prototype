@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
         Where do you want to go?
       </div>
 
@@ -13,7 +13,7 @@ export default function Home() {
         <SearchBar />
       </div>
 
-      <div className="mt-8 text-2xl grid md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 gap-4">
+      <div className="mt-8 text-2xl w-full max-w-lg md:max-w-full grid md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 gap-4">
         <Link
           href="/trip-duration"
           className="relative uppercase col-span-2 xl:col-span-1 opacity-80 hover:opacity-100 transition hover:-translate-y-1"

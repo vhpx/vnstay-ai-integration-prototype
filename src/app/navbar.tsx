@@ -8,7 +8,7 @@ export default function Navbar() {
       id="navbar"
       className="fixed inset-x-0 bg-background top-0 z-50 flex justify-between p-2 pb-0 border-b items-end lg:px-8 xl:px-16"
     >
-      <div className="pb-3">
+      <Link href="/" className="pb-3">
         <Image
           src="/dark.png"
           alt="Vietnamstay Logo"
@@ -23,7 +23,7 @@ export default function Navbar() {
           height={50}
           className="dark:hidden max-w-48"
         />
-      </div>
+      </Link>
       <div className="flex flex-col gap-3 items-end">
         {/* <div className="flex gap-3 text-brand items-center font-semibold">
           <div>Live Chat | Call: +84 915 118 628</div>
