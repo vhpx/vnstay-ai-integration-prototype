@@ -150,7 +150,7 @@ export default function Home() {
 
       <Button
         className="mt-4 w-full max-w-4xl"
-        onClick={() => router.push("/trip-travellers")}
+        onClick={() => router.push("/trip-planning")}
         disabled={!travellers}
       >
         Continue
