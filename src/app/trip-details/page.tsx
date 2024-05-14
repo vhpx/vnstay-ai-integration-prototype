@@ -475,7 +475,7 @@ export default function Home({
                 known for its stunning architecture, intricate carvings, and
                 serene atmosphere.
               </div>
-              <div className="font-semibold underline">Read more</div>
+              <button className="font-semibold underline">Read more</button>
 
               <div className="flex gap-4 justify-between items-center mt-4">
                 <div className="font-semibold">
