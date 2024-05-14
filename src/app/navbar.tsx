@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed inset-x-0 top-0 z-50 flex justify-between p-2 pb-0 border-b items-end lg:px-8 xl:px-16"
+      className="fixed inset-x-0 bg-background top-0 z-50 flex justify-between p-2 pb-0 border-b items-end lg:px-8 xl:px-16"
     >
       <div className="pb-3">
         <Image

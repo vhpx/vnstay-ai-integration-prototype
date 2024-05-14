@@ -36,7 +36,7 @@ export default function Sidebar() {
           <div className="font-semibold line-clamp-1 text-start">
             Your trip to Ho Chi Minh City for 3 days
           </div>
-          <div className="line-clamp-2 text-start">
+          <div className="line-clamp-2 text-start opacity-90">
             Ho Chi Minh City offers a vibrant and bustling atmosphere, perfect
             for solo travelers like yourself. Explore the city&apos;s rich
             history and culture, visit the famous landmarks, and indulge in the
@@ -48,7 +48,7 @@ export default function Sidebar() {
           <div className="font-semibold line-clamp-1 text-start">
             Your trip to Phnom Penh for 7 days for a family
           </div>
-          <div className="line-clamp-2 text-start">
+          <div className="line-clamp-2 text-start opacity-90">
             Phnom Penh, the capital city of Cambodia, is a fascinating
             destination for your 7-day family trip. Explore the city&apos;s rich
             history, visit the famous landmarks, and indulge in the delicious

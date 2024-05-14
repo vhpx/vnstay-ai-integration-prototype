@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <Navbar />
           <NavbarPadding>
-            <main className="flex flex-1 h-full min-h-full">
+            <main className="grid md:flex flex-1 h-full min-h-full">
               <Sidebar />
               {children}
             </main>

@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
         Where are you from?
       </div>
 
@@ -29,7 +29,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="mt-4 md:mt-8 text-2xl lg:text-4xl font-semibold">
+      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold">
         When are you going?
       </div>
 

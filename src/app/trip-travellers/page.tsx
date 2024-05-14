@@ -22,11 +22,11 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-      <div className="text-2xl lg:text-4xl font-semibold">
+      <div className="text-lg md:text-2xl lg:text-4xl font-semibold">
         Who&apos;s coming with you?
       </div>
 
-      <div className="mt-4 max-w-4xl grid grid-cols-2 lg:grid-cols-4 gap-2 w-full">
+      <div className="mt-4 max-w-4xl grid md:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
         <button
           onClick={() =>
             travellers === "Solo" ? setTravellers("") : setTravellers("Solo")
@@ -90,11 +90,11 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="mt-4 md:mt-8 text-2xl lg:text-4xl font-semibold">
+      <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold">
         Any special requests?
       </div>
 
-      <div className="mt-4 max-w-4xl grid grid-cols-3 gap-2 w-full">
+      <div className="mt-4 max-w-4xl grid md:grid-cols-3 gap-2 w-full">
         <button
           onClick={() =>
             specialRequests.includes("Pets")
