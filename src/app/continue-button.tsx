@@ -33,6 +33,7 @@ export default function ContinueButton({
           router.push(href);
         }, delay);
       }}
+      variant="brand"
       disabled={disabled || loading}
     >
       {loading ? loadingLabel || "Processing..." : label || "Continue"}

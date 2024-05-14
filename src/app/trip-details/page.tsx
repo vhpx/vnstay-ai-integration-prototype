@@ -290,7 +290,7 @@ export default function Home({
 
             <div className="flex justify-end gap-2">
               <Button variant="ghost">View details</Button>
-              <Button>Book now</Button>
+              <Button variant="brand">Book now</Button>
             </div>
           </div>
 
@@ -344,7 +344,7 @@ export default function Home({
 
             <div className="flex justify-end gap-2">
               <Button variant="ghost">View details</Button>
-              <Button>Book now</Button>
+              <Button variant="brand">Book now</Button>
             </div>
           </div>
         </div>
@@ -425,7 +425,7 @@ export default function Home({
           <AccordionItem value="item-1">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   1
                 </div>
                 Giac Lam Pagoda
@@ -467,7 +467,7 @@ export default function Home({
                 known for its stunning architecture, intricate carvings, and
                 serene atmosphere.
               </div>
-              <Button>Read more</Button>
+              <Button variant="brand">Read more</Button>
 
               <div className="flex gap-4 justify-between items-center mt-4">
                 <div>Was this recommendation useful?</div>
@@ -485,7 +485,7 @@ export default function Home({
           <AccordionItem value="item-2">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   2
                 </div>
                 A.dau Kitchen
@@ -496,7 +496,7 @@ export default function Home({
           <AccordionItem value="item-3">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   3
                 </div>
                 Museum of Vietnamese History
@@ -507,7 +507,7 @@ export default function Home({
           <AccordionItem value="item-4">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   4
                 </div>
                 Emperor Jade Pagoda
@@ -518,7 +518,7 @@ export default function Home({
           <AccordionItem value="item-5">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   5
                 </div>
                 Secret Garden
@@ -564,7 +564,7 @@ export default function Home({
           <AccordionItem value="item-1">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   1
                 </div>
                 Saigon Skydeck
@@ -575,7 +575,7 @@ export default function Home({
           <AccordionItem value="item-2">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   2
                 </div>
                 The Simple Café Le Lai
@@ -586,7 +586,7 @@ export default function Home({
           <AccordionItem value="item-3">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   3
                 </div>
                 Central Post Office
@@ -597,7 +597,7 @@ export default function Home({
           <AccordionItem value="item-4">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   4
                 </div>
                 Saigon Café - Seafood Buffet Restaurant
@@ -608,7 +608,7 @@ export default function Home({
           <AccordionItem value="item-5">
             <AccordionTrigger>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-foreground text-background font-semibold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-brand text-white font-semibold">
                   5
                 </div>
                 The Venerable Thich Quang Duc Monument
