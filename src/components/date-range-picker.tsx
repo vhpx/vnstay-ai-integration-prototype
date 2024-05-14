@@ -176,9 +176,13 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     return { from, to };
   };
 
-  const setPreset = (preset: string): void => {
+  const setPreset = (
+    preset: string,
+    onUpdate?: (values: { range: DateRange; rangeCompare?: DateRange }) => void
+  ): void => {
     const range = getPresetRange(preset);
     setRange(range);
+    onUpdate?.({ range });
     if (rangeCompare) {
       const rangeCompare = {
         from: range.from
@@ -278,7 +282,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       className={cn(isSelected && "pointer-events-none")}
       variant="ghost"
       onClick={() => {
-        setPreset(preset);
+        setPreset(preset, onUpdate);
       }}
     >
       <>
