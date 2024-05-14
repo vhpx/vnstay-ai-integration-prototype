@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import PlanningOption from "./option";
+import ContinueButton from "../continue-button";
 
 const presetPossibleOptions = [
   "Must-see attractions",
@@ -62,13 +63,12 @@ export default function Home() {
         </div>
       </div>
 
-      <Button
-        className="mt-4 w-full max-w-4xl"
-        onClick={() => router.push("/trip-planning")}
-        disabled={!presetOptions.length}
-      >
-        Continue
-      </Button>
+      <ContinueButton
+        href="/trip-details"
+        label="Generate trip plan"
+        // disabled={!presetOptions.length}
+        disabled
+      />
     </div>
   );
 }

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import ContinueButton from "../continue-button";
 
 export default function Home() {
   const router = useRouter();
@@ -148,13 +149,7 @@ export default function Home() {
         </button>
       </div>
 
-      <Button
-        className="mt-4 w-full max-w-4xl"
-        onClick={() => router.push("/trip-planning")}
-        disabled={!travellers}
-      >
-        Continue
-      </Button>
+      <ContinueButton href="/trip-planning" disabled={!travellers} />
     </div>
   );
 }

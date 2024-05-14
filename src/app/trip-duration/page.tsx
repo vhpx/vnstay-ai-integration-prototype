@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import ContinueButton from "../continue-button";
 
 export default function Home() {
   const router = useRouter();
@@ -42,13 +43,10 @@ export default function Home() {
         disabled={!location}
       />
 
-      <Button
-        className="mt-4 w-full max-w-lg"
-        onClick={() => router.push("/trip-travellers")}
+      <ContinueButton
+        href="/trip-travellers"
         disabled={!location || !range?.from || !range?.to}
-      >
-        Continue
-      </Button>
+      />
     </div>
   );
 }
