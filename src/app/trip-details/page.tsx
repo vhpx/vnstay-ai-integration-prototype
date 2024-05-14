@@ -382,7 +382,7 @@ export default function Home({
 
         <div className="w-full max-w-4xl md:h-96 rounded-lg bg-cover overflow-hidden animate-slide-in opacity-0 [--slide-in-delay:3150ms]">
           <Image
-            src="/map.png"
+            src="/map-pinned.png"
             width={1576}
             height={696}
             alt="Ho Chi Minh City map"
@@ -423,7 +423,7 @@ export default function Home({
 
         <Accordion
           type="single"
-          defaultValue="item-1"
+          // defaultValue="item-1"
           className="w-full animate-slide-in opacity-0 [--slide-in-delay:4350ms]"
           collapsible
         >
@@ -480,7 +480,9 @@ export default function Home({
               </Button>
 
               <div className="flex gap-4 justify-between items-center mt-4">
-                <div>Was this recommendation useful?</div>
+                <div className="font-semibold">
+                  Was this recommendation useful?
+                </div>
                 <div className="flex gap-2">
                   <Button size="icon" variant="ghost" className="p-1">
                     <ThumbsUp size={20} />
