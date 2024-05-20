@@ -2,13 +2,10 @@
 
 import { Separator } from "@/components/ui/separator";
 import { CircleXIcon } from "lucide-react";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 export default function ErrorPage() {
-  const searchParams = useSearchParams();
-
-  const msg = searchParams.get("message");
+  // const searchParams = useSearchParams();
+  // const msg = searchParams.get("message");
 
   return (
     <div className="w-full h-full p-2 md:4 lg:p-8 flex items-center justify-center">
@@ -18,9 +15,7 @@ export default function ErrorPage() {
           Error
         </div>
         <Separator className="my-2" />
-        <Suspense fallback={<div>Loading...</div>}>
-          <div className="line-clamp-3">{msg || "Something went wrong"}</div>
-        </Suspense>
+        <div className="line-clamp-3">Something went wrong</div>
       </div>
     </div>
   );
