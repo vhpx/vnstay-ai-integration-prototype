@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
+import { UserNav } from "./user-dropdown";
 
 export default function Navbar() {
   return (
@@ -73,7 +74,8 @@ export default function Navbar() {
               Chat with AI
             </Button>
 
-            <ThemeToggle className="" />
+            {/* <ThemeToggle className="" /> */}
+            <UserNav />
           </div>
         </div>
       </div>

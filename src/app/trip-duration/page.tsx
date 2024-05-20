@@ -14,6 +14,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useRouter } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const router = useRouter();
@@ -27,21 +28,6 @@ export default function Home() {
   return (
     <AlertDialog open={showError}>
       <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-        <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
-          Where are you from?
-        </div>
-
-        <div className="mt-4 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:300ms]">
-          <Input
-            id="location"
-            name="location"
-            placeholder="Ho Chi Minh City, Vietnam"
-            className="py-6"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
-
         <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:600ms]">
           When are you going?
         </div>
@@ -54,6 +40,23 @@ export default function Home() {
             onUpdate={(v) => setRange(v.range || v.rangeCompare)}
             showCompare={false}
             disabled={!location}
+          />
+        </div>
+
+        <Separator className="my-4 bg-foreground/20 max-w-2xl" />
+
+        <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
+          Where are you from?
+        </div>
+
+        <div className="mt-4 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:300ms]">
+          <Input
+            id="location"
+            name="location"
+            placeholder="Ho Chi Minh City, Vietnam"
+            className="py-6"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
 

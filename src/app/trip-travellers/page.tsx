@@ -2,6 +2,7 @@
 
 import {
   Baby,
+  Check,
   FlameKindling,
   HeartHandshake,
   PawPrint,
@@ -98,14 +99,27 @@ export default function Home() {
                 ? setSpecialRequests((rqs) => rqs.filter((rq) => rq !== "Pets"))
                 : setSpecialRequests((rqs) => [...rqs, "Pets"])
             }
-            className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
+            className={`flex items-center justify-between gap-2 p-4 rounded-lg border-2 transition ${
               specialRequests.includes("Pets")
-                ? "border-foreground opacity-100"
+                ? "opacity-100"
                 : "opacity-50 md:hover:opacity-100"
             }`}
           >
-            <PawPrint className="w-8 h-8 inline-block" />
-            <div className="font-semibold text-2xl">Pets</div>
+            <div className="flex gap-2 items-center">
+              <PawPrint className="w-6 h-6 inline-block" />
+              <div className="font-semibold text-lg">Pets</div>
+            </div>
+            <div
+              className={`w-5 h-5 border-2 flex items-center justify-center rounded border-foreground ${
+                specialRequests.includes("Pets")
+                  ? "bg-foreground text-background"
+                  : "opacity-50"
+              } transition`}
+            >
+              {specialRequests.includes("Pets") ? (
+                <Check className="w-5 h-5 inline-block" />
+              ) : null}
+            </div>
           </button>
 
           <button
@@ -116,14 +130,27 @@ export default function Home() {
                   )
                 : setSpecialRequests((rqs) => [...rqs, "Children"])
             }
-            className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
+            className={`flex items-center justify-between gap-2 p-4 rounded-lg border-2 transition ${
               specialRequests.includes("Children")
-                ? "border-foreground opacity-100"
+                ? "opacity-100"
                 : "opacity-50 md:hover:opacity-100"
             }`}
           >
-            <Baby className="w-8 h-8 inline-block" />
-            <div className="font-semibold text-2xl">Children</div>
+            <div className="flex gap-2 items-center">
+              <Baby className="w-6 h-6 inline-block" />
+              <div className="font-semibold text-lg">Children</div>
+            </div>
+            <div
+              className={`w-5 h-5 border-2 flex items-center justify-center rounded border-foreground ${
+                specialRequests.includes("Children")
+                  ? "bg-foreground text-background"
+                  : "opacity-50"
+              } transition`}
+            >
+              {specialRequests.includes("Children") ? (
+                <Check className="w-5 h-5 inline-block" />
+              ) : null}
+            </div>
           </button>
 
           <button
@@ -134,14 +161,27 @@ export default function Home() {
                   )
                 : setSpecialRequests((rqs) => [...rqs, "Elderly"])
             }
-            className={`flex flex-col gap-2 p-4 rounded-lg border-2 transition ${
+            className={`flex items-center justify-between gap-2 p-4 rounded-lg border-2 transition ${
               specialRequests.includes("Elderly")
-                ? "border-foreground opacity-100"
+                ? "opacity-100"
                 : "opacity-50 md:hover:opacity-100"
             }`}
           >
-            <Sparkles className="w-8 h-8 inline-block" />
-            <div className="font-semibold text-2xl">Elderly</div>
+            <div className="flex gap-2 items-center">
+              <Sparkles className="w-6 h-6 inline-block" />
+              <div className="font-semibold text-lg">Elderly</div>
+            </div>
+            <div
+              className={`w-5 h-5 border-2 flex items-center justify-center rounded border-foreground ${
+                specialRequests.includes("Elderly")
+                  ? "bg-foreground text-background"
+                  : "opacity-50"
+              } transition`}
+            >
+              {specialRequests.includes("Elderly") ? (
+                <Check className="w-5 h-5 inline-block" />
+              ) : null}
+            </div>
           </button>
         </div>
 

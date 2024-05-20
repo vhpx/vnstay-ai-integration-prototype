@@ -660,12 +660,12 @@ export default function Home({
         </Accordion>
       </div>
 
-      <div className="sticky bottom-0 w-full p-2 bg-background/50 backdrop-blur-lg flex-none animate-slide-in opacity-0 [--slide-in-delay:5550ms]">
+      <div className="sticky bottom-0 w-full p-2 bg-background/50 backdrop-blur-lg flex-none animate-slide-in opacity-0 [--slide-in-delay:450ms]">
         <div className="relative">
           <Input
             id="planning-options"
             name="planning-options"
-            placeholder="Add more shopping, dining, or sightseeing options."
+            placeholder="Customize your trip..."
             className="py-6 bg-background/70 backdrop-blur-lg border bg-white dark:bg-black rounded-lg w-full"
             value={options}
             onChange={(e) => setOptions(e.target.value)}

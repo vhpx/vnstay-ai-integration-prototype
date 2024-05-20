@@ -10,9 +10,11 @@ import {
   Settings,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Sidebar() {
+  const pathname = usePathname();
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   return (
@@ -91,18 +93,36 @@ export default function Sidebar() {
 
       <div className="flex items-center justify-center">
         <div className="p-1 flex border border-brand/20 dark:border-border rounded just gap-1">
-          <button className="flex items-center gap-2 border-2 border-transparent text-white md:hover:bg-brand-hover transition h-fit bg-brand rounded px-4 py-1 font-semibold">
+          <Link
+            href="/"
+            className={`flex items-center gap-2 border-2 border-transparent transition h-fit rounded px-4 py-1 font-semibold ${
+              pathname !== "/settings"
+                ? "text-white bg-brand md:hover:bg-brand-hover"
+                : "md:hover:bg-brand-hover"
+            }`}
+          >
             <Home className="h-4 w-4" />
-            Main
-          </button>
-          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent md:hover:text-white md:hover:bg-brand-hover rounded px-4 py-1 font-semibold">
-            <Settings className="h-4 w-4" />
+            Trips
+          </Link>
+          <Link
+            href="/settings"
+            className={`flex items-center gap-2 border-2 border-transparent transition h-fit rounded px-4 py-1 font-semibold ${
+              pathname === "/settings"
+                ? "text-white bg-brand md:hover:bg-brand-hover"
+                : "md:hover:bg-brand-hover"
+            }`}
+          >
+            <Home className="h-4 w-4" />
             Settings
-          </button>
-          <button className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent md:hover:text-white md:hover:bg-brand-hover rounded px-4 py-1 font-semibold">
+          </Link>
+          <Link
+            href="https://www.vietnamstay.com/about-vietnamstay"
+            className="flex items-center gap-2 text-brand dark:text-white transition h-fit border-2 border-transparent md:hover:text-white md:hover:bg-brand-hover rounded px-4 py-1 font-semibold"
+            target="_blank"
+          >
             <Info className="h-4 w-4" />
             Help
-          </button>
+          </Link>
         </div>
       </div>
     </div>
