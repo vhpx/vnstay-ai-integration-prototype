@@ -7,18 +7,24 @@ import { useState } from "react";
 
 export default function ContinueButton({
   label,
+  loading: overrideLoading,
   loadingLabel,
   delay = 0,
   href,
   className,
   disabled,
+  onClick,
+  setLoading: overrideSetLoading,
 }: {
   label?: string;
+  loading?: boolean;
   loadingLabel?: string;
   delay?: number;
-  href: string;
+  href?: string;
   className?: string;
   disabled: boolean;
+  onClick?: () => void;
+  setLoading?: (loading: boolean) => void;
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -27,16 +33,21 @@ export default function ContinueButton({
     <Button
       className={cn("mt-4 w-full max-w-lg", className)}
       onClick={() => {
-        setLoading(true);
+        if (overrideSetLoading) overrideSetLoading(true);
+        else setLoading(true);
 
         setTimeout(() => {
-          router.push(href);
+          if (href) router.push(href);
         }, delay);
+
+        if (onClick) onClick();
       }}
       variant="brand"
-      disabled={disabled || loading}
+      disabled={disabled || (overrideLoading ?? loading)}
     >
-      {loading ? loadingLabel || "Processing..." : label || "Continue"}
+      {loading || overrideLoading
+        ? loadingLabel || "Processing..."
+        : label || "Continue"}
     </Button>
   );
 }

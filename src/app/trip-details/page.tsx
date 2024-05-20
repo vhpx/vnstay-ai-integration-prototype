@@ -133,7 +133,7 @@ export default function Home({
           Available Flights
         </div>
 
-        <div className="mt-4 md:mt-8 rounded-lg border p-4 w-full max-w-4xl animate-slide-in opacity-0 [--slide-in-delay:1050ms]">
+        <div className="mt-4 md:mt-8 rounded-lg border bg-white dark:bg-black p-4 w-full max-w-4xl animate-slide-in opacity-0 [--slide-in-delay:1050ms]">
           <div className="border-b flex flex-col lg:flex-row gap-2 justify-between pb-2 mb-2">
             <div>
               <div>Departure</div>
@@ -245,7 +245,7 @@ export default function Home({
         </div>
 
         <div className="mt-4 md:mt-8 grid lg:grid-cols-2 w-full max-w-4xl gap-4 animate-slide-in opacity-0 [--slide-in-delay:1650ms]">
-          <div className="grid gap-2 border rounded-lg p-2">
+          <div className="grid gap-2 border bg-white dark:bg-black rounded-lg p-2">
             <div className="flex gap-2 border-b pb-2">
               <Image
                 src="/lynnwood.png"
@@ -299,7 +299,7 @@ export default function Home({
             </div>
           </div>
 
-          <div className="grid gap-2 border rounded-lg p-2">
+          <div className="grid gap-2 border bg-white dark:bg-black rounded-lg p-2">
             <div className="flex gap-2 border-b pb-2">
               <Image
                 src="/the-void.png"
@@ -360,17 +360,21 @@ export default function Home({
 
         <div className="mt-4 max-w-4xl grid md:grid-cols-2 2xl:grid-cols-4 gap-2 w-full animate-slide-in opacity-0 [--slide-in-delay:2250ms]">
           {presetPossibleOptions.map((label) => (
-            <PlanningOption key={label} label={label} />
+            <PlanningOption
+              key={label}
+              label={label}
+              className="bg-white dark:bg-black"
+            />
           ))}
         </div>
 
         <div className="mt-4 max-w-4xl grid md:grid-cols-2 2xl:grid-cols-4 gap-2 w-full animate-slide-in opacity-0 [--slide-in-delay:2550ms]">
-          <div className="flex flex-col gap-2 p-4 rounded-lg border-2 transition xl:col-span-2 opacity-100">
+          <div className="flex flex-col gap-2 p-4 rounded-lg border-2 bg-white dark:bg-black transition xl:col-span-2 opacity-100">
             <HeartHandshake className="w-8 h-8 inline-block" />
             <div className="font-semibold text-2xl">Partner</div>
           </div>
 
-          <div className="flex flex-col gap-2 p-4 rounded-lg border-2 transition xl:col-span-2 opacity-100">
+          <div className="flex flex-col gap-2 p-4 rounded-lg border-2 bg-white dark:bg-black transition xl:col-span-2 opacity-100">
             <PawPrint className="w-8 h-8 inline-block" />
             <div className="font-semibold text-2xl">Pets</div>
           </div>
@@ -662,7 +666,7 @@ export default function Home({
             id="planning-options"
             name="planning-options"
             placeholder="Add more shopping, dining, or sightseeing options."
-            className="py-6 bg-background/70 backdrop-blur-lg border rounded-lg w-full"
+            className="py-6 bg-background/70 backdrop-blur-lg border bg-white dark:bg-black rounded-lg w-full"
             value={options}
             onChange={(e) => setOptions(e.target.value)}
             onKeyDown={(e) => {

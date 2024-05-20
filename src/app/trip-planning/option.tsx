@@ -3,10 +3,12 @@ import { Dispatch } from "react";
 export default function PlanningOption({
   label,
   presetOptions,
+  className,
   setPresetOptions,
 }: {
   label: string;
   presetOptions?: string[];
+  className?: string;
   setPresetOptions?: Dispatch<React.SetStateAction<string[]>>;
 }) {
   return (
@@ -24,7 +26,7 @@ export default function PlanningOption({
             ? "border-foreground opacity-100"
             : "opacity-50 md:hover:opacity-100"
           : "opacity-100 cursor-default"
-      }`}
+      } ${className}`}
     >
       <div className="font-semibold">{label}</div>
     </button>
