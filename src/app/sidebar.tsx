@@ -98,7 +98,7 @@ export default function Sidebar() {
             className={`flex items-center gap-2 border-2 border-transparent transition h-fit rounded px-4 py-1 font-semibold ${
               pathname !== "/settings"
                 ? "text-white bg-brand md:hover:bg-brand-hover"
-                : "md:hover:bg-brand-hover md:hover:text-white text-brand"
+                : "md:hover:bg-brand-hover md:hover:text-white text-brand dark:text-white"
             }`}
           >
             <Home className="h-4 w-4" />
@@ -109,7 +109,7 @@ export default function Sidebar() {
             className={`flex items-center gap-2 border-2 border-transparent transition h-fit rounded px-4 py-1 font-semibold ${
               pathname === "/settings"
                 ? "text-white bg-brand md:hover:bg-brand-hover"
-                : "md:hover:bg-brand-hover md:hover:text-white text-brand"
+                : "md:hover:bg-brand-hover md:hover:text-white text-brand dark:text-white"
             }`}
           >
             <Settings className="h-4 w-4" />
