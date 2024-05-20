@@ -3,6 +3,7 @@
 import { Separator } from "@/components/ui/separator";
 import { CircleXIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function ErrorPage() {
   const searchParams = useSearchParams();
@@ -17,7 +18,9 @@ export default function ErrorPage() {
           Error
         </div>
         <Separator className="my-2" />
-        <div className="line-clamp-3">{msg || "Something went wrong"}</div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div className="line-clamp-3">{msg || "Something went wrong"}</div>
+        </Suspense>
       </div>
     </div>
   );
