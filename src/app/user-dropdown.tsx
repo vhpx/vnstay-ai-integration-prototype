@@ -25,7 +25,10 @@ export async function UserNav() {
       <DropdownMenuTrigger asChild>
         <Avatar className="relative cursor-pointer overflow-visible font-semibold">
           <Suspense fallback={<AvatarFallback>?</AvatarFallback>}>
-            <AvatarImage className="overflow-clip rounded-full" />
+            <AvatarImage
+              src="https://avatars.githubusercontent.com/u/81307469"
+              className="overflow-clip rounded-full"
+            />
             <AvatarFallback className="font-semibold">
               <User className="h-5 w-5" />
             </AvatarFallback>

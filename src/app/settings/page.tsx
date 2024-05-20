@@ -116,7 +116,7 @@ export default function SettingsPage() {
               <div className="font-semibold">Avatar</div>
               <div className="group cursor-pointer">
                 <Avatar className="h-12 w-12">
-                  <AvatarFallback>Y</AvatarFallback>
+                  <AvatarFallback>P</AvatarFallback>
                   <AvatarImage src="https://avatars.githubusercontent.com/u/81307469"></AvatarImage>
                 </Avatar>
                 <button className="absolute group-hover:bg-white transition -bottom-1 -right-1 p-1 bg-zinc-300 dark:bg-[#8e8e90] border text-black rounded-full">
