@@ -28,11 +28,11 @@ export default function Home() {
   return (
     <AlertDialog open={showError}>
       <div className="flex items-center justify-center flex-col h-full w-full p-4 lg:p-8">
-        <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:600ms]">
+        <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
           When are you going?
         </div>
 
-        <div className="mt-4 w-full max-w-lg flex items-center justify-center animate-slide-in opacity-0 [--slide-in-delay:900ms]">
+        <div className="mt-4 w-full max-w-lg flex items-center justify-center animate-slide-in opacity-0 [--slide-in-delay:300ms]">
           <DateRangePicker
             className="w-full"
             initialDateFrom={undefined}
@@ -43,13 +43,13 @@ export default function Home() {
           />
         </div>
 
-        <Separator className="my-4 bg-foreground/20 max-w-2xl" />
+        <Separator className="my-4 bg-foreground/20 max-w-2xl animate-slide-in opacity-0 [--slide-in-delay:600ms]" />
 
-        <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:0ms]">
+        <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:600ms]">
           Where are you from?
         </div>
 
-        <div className="mt-4 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:300ms]">
+        <div className="mt-4 relative max-w-lg w-full animate-slide-in opacity-0 [--slide-in-delay:900ms]">
           <Input
             id="location"
             name="location"
