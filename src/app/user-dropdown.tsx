@@ -3,6 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
+  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuSeparator,
@@ -11,7 +12,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Globe, Palette, User } from "lucide-react";
+import { Globe, Palette, Settings, User } from "lucide-react";
 import { Suspense } from "react";
 import { LogoutDropdownItem } from "./logout-dropdown-item";
 import { ThemeDropdownItems } from "./theme-dropdown-items";
@@ -76,6 +77,13 @@ export async function UserNav() {
             </DropdownMenuPortal>
           </DropdownMenuSub>
         </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <Link href="/settings" className="cursor-pointer">
+            <Settings className="mr-2 h-4 w-4" />
+            <span>Settings</span>
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <LogoutDropdownItem />
       </DropdownMenuContent>

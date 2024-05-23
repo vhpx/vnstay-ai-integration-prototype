@@ -147,7 +147,7 @@ export default function Home({
 
             <div>
               <div>Date</div>
-              <div className="font-semibold">May 10, 2024</div>
+              <div className="font-semibold">May 25, 2024</div>
             </div>
           </div>
 
@@ -305,11 +305,11 @@ export default function Home({
                 src="/the-void.png"
                 width={140}
                 height={140}
-                alt="Lynnwood Boutique House"
+                alt="The Void Homestay"
                 className="w-32 h-32 bg-cover rounded-lg"
               />
               <div>
-                <div className="font-semibold">Lynnwood Boutique House</div>
+                <div className="font-semibold">The Void Homestay</div>
                 <div className="flex gap-1 items-center text-sm">
                   <Star className="w-3 h-3 inline-block" />
                   <Star className="w-3 h-3 inline-block" />

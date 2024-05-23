@@ -41,16 +41,11 @@ export default function SettingsPage() {
                 onValueChange={(value) => setTheme(value as string)}
               >
                 <SelectTrigger className="w-[120px]">
-                  <SelectValue
-                    defaultValue="light"
-                    placeholder="Select theme"
-                  />
+                  <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="light">Light</SelectItem>
-                    <SelectItem value="dark">Dark</SelectItem>
-                  </SelectGroup>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
                 </SelectContent>
               </Select>
             </div>
