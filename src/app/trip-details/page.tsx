@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import {
+  Armchair,
   Baby,
   BadgePercent,
   Bed,
@@ -41,6 +42,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SeatPicker from "./seat-picker";
+import { useRouter } from "next/navigation";
 
 const presetPossibleOptions = [
   "Must-see attractions",
@@ -56,6 +59,8 @@ export default function Home({
     city?: string;
   };
 }) {
+  const router = useRouter();
+
   useEffect(() => {
     setLoading(true);
     const elements = document.querySelectorAll(".animate-slide-in");
@@ -84,6 +89,27 @@ export default function Home({
   const [loading, setLoading] = useState<boolean>(false);
 
   const [saved, setSaved] = useState<boolean>(false);
+  const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
+  const [tripDetails, setTripDetails] = useState<{
+    airline: string;
+    departure: string;
+    duration: string;
+    price: string;
+    route: string;
+    img: string;
+  } | null>(null);
+
+  const [bookedAirline, setBookedAirline] = useState<string>("");
+  const [bookedAccommodation, setBookedAccommodation] = useState<string>("");
+
+  // when tripDetails is set, scroll to the seat picker
+  useEffect(() => {
+    if (tripDetails?.airline) {
+      document.getElementById("seat-picker")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [tripDetails]);
 
   return (
     <div
@@ -133,8 +159,8 @@ export default function Home({
           Available Flights
         </div>
 
-        <div className="mt-4 md:mt-8 rounded-lg border bg-white dark:bg-black p-4 w-full max-w-4xl animate-slide-in opacity-0 [--slide-in-delay:1050ms]">
-          <div className="border-b flex flex-col lg:flex-row gap-2 justify-between pb-2 mb-2">
+        <div className="mt-4 md:mt-8 rounded-lg border bg-white dark:bg-black w-full max-w-4xl animate-slide-in opacity-0 [--slide-in-delay:1050ms]">
+          <div className="border-b p-4 flex flex-col lg:flex-row gap-2 justify-between pb-2 mb-2">
             <div>
               <div>Departure</div>
               <div className="font-semibold">London, UK</div>
@@ -152,7 +178,19 @@ export default function Home({
           </div>
 
           <div className="grid gap-4">
-            <div className="flex gap-2">
+            <button
+              onClick={() =>
+                setTripDetails({
+                  airline: "United Airlines",
+                  departure: "8:30 PM - 7:30 AM (Next day)",
+                  duration: "10h45m",
+                  price: "$531",
+                  route: "SFO - FCO",
+                  img: "/UA.png",
+                })
+              }
+              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mt-2 mx-4 transition rounded-lg"
+            >
               <Image
                 src="/UA.png"
                 width={45}
@@ -178,11 +216,23 @@ export default function Home({
                   <div className="text-sm">One-way</div>
                 </div>
               </div>
-            </div>
+            </button>
 
             <Separator />
 
-            <div className="flex gap-2">
+            <button
+              onClick={() =>
+                setTripDetails({
+                  airline: "Scandinavian Airlines",
+                  departure: "2:40 AM - 1:30 PM",
+                  duration: "10h50m",
+                  price: "$564",
+                  route: "SFO - FCO",
+                  img: "/sas.png",
+                })
+              }
+              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mx-4 transition rounded-lg"
+            >
               <Image
                 src="/sas.png"
                 width={45}
@@ -206,11 +256,23 @@ export default function Home({
                   <div className="text-sm">One-way</div>
                 </div>
               </div>
-            </div>
+            </button>
 
             <Separator />
 
-            <div className="flex gap-2">
+            <button
+              onClick={() =>
+                setTripDetails({
+                  airline: "Delta Air Lines",
+                  departure: "3:00 PM - 1:30 AM (Next day)",
+                  duration: "10h30m",
+                  price: "$611",
+                  route: "SFO - FCO",
+                  img: "/delta.png",
+                })
+              }
+              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mb-4 mx-4 transition rounded-lg"
+            >
               <Image
                 src="/delta.png"
                 width={45}
@@ -236,11 +298,39 @@ export default function Home({
                   <div className="text-sm">One-way</div>
                 </div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
 
-        <div className="mt-4 md:mt-8 text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:1350ms]">
+        <div
+          id="seat-picker"
+          className={`scroll-mt-4 w-full overflow-clip ${
+            tripDetails
+              ? "my-4 md:my-8 h-fit animate-slide-in opacity-0 [--slide-in-delay:450ms]"
+              : "h-0 opacity-0 mb-4 md:mb-8"
+          } transition-all`}
+        >
+          <div
+            className={`${
+              tripDetails
+                ? "animate-slide-in opacity-0 [--slide-in-delay:150ms]"
+                : "opacity-0"
+            }`}
+          >
+            Great! Here are the available seats for your flight. Please select a
+            seat to continue.
+          </div>
+
+          <SeatPicker
+            selectedTrip={tripDetails}
+            selectedSeats={selectedSeats}
+            setSelectedSeats={setSelectedSeats}
+            bookedAirline={bookedAirline}
+            onBook={(airline) => setBookedAirline(airline)}
+          />
+        </div>
+
+        <div className="text-lg md:text-2xl lg:text-4xl font-semibold animate-slide-in opacity-0 [--slide-in-delay:1350ms]">
           Places to stay
         </div>
 
@@ -295,7 +385,19 @@ export default function Home({
 
             <div className="flex justify-end gap-2">
               <Button variant="ghost">View details</Button>
-              <Button variant="brand">Book now</Button>
+              <Button
+                variant="brand"
+                onClick={() =>
+                  setBookedAccommodation("Lynnwood Boutique House")
+                }
+                disabled={bookedAccommodation === "Lynnwood Boutique House"}
+                className="gap-2"
+              >
+                {bookedAccommodation === "Lynnwood Boutique House" && <Check />}
+                {bookedAccommodation === "Lynnwood Boutique House"
+                  ? "Booked"
+                  : "Book now"}
+              </Button>
             </div>
           </div>
 
@@ -349,7 +451,17 @@ export default function Home({
 
             <div className="flex justify-end gap-2">
               <Button variant="ghost">View details</Button>
-              <Button variant="brand">Book now</Button>
+              <Button
+                variant="brand"
+                onClick={() => setBookedAccommodation("The Void Homestay")}
+                disabled={bookedAccommodation === "The Void Homestay"}
+                className="gap-2"
+              >
+                {bookedAccommodation === "The Void Homestay" && <Check />}
+                {bookedAccommodation === "The Void Homestay"
+                  ? "Booked"
+                  : "Book now"}
+              </Button>
             </div>
           </div>
         </div>
@@ -658,6 +770,16 @@ export default function Home({
             <AccordionContent></AccordionContent>
           </AccordionItem>
         </Accordion>
+      </div>
+
+      <div className="px-8 animate-slide-in opacity-0 [--slide-in-delay:5550ms]">
+        <Button
+          className="mt-2 mb-8 rounded w-full"
+          onClick={() => router.push("/checkout")}
+          variant="brand"
+        >
+          Check out
+        </Button>
       </div>
 
       <div className="sticky bottom-0 w-full p-2 bg-background/50 backdrop-blur-lg flex-none animate-slide-in opacity-0 [--slide-in-delay:450ms]">
