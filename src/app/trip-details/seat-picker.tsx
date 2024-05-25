@@ -38,7 +38,7 @@ export default function SeatPicker({
         <div>
           <div>
             <span className="font-semibold">{selectedTrip.airline}</span> · May
-            25, 2024 · {selectedTrip.departure}
+            30, 2024 · {selectedTrip.departure}
           </div>
           <div>
             <span className="font-semibold">{selectedTrip.route}</span> ·{" "}

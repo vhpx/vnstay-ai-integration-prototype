@@ -192,7 +192,7 @@ export default function Home({
 
             <div>
               <div>Date</div>
-              <div className="font-semibold">May 25, 2024</div>
+              <div className="font-semibold">May 30, 2024</div>
             </div>
           </div>
 
@@ -867,7 +867,7 @@ export default function Home({
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="text-sm opacity-80">May 25, 2024</div>
+                          <div className="text-sm opacity-80">May 30, 2024</div>
                           <div className="ml-1 flex items-center gap-2">
                             <span className="text-lg md:text-2xl">
                               $
@@ -900,7 +900,7 @@ export default function Home({
                               Deluxe Room
                             </div>
                             <div className="text-sm opacity-80">
-                              May 25, 2024
+                              May 30, 2024
                             </div>
                           </div>
                           <div className="ml-1 px-2 rounded text-lg md:text-2xl">
