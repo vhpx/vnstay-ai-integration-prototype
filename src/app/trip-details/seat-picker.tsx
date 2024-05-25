@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import Seat from "./seat";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 export default function SeatPicker({
   selectedTrip,
@@ -24,7 +23,6 @@ export default function SeatPicker({
   setSelectedSeats: Dispatch<SetStateAction<string[]>>;
   onBook: (airline: string, seats: string[]) => void;
 }) {
-  const router = useRouter();
   if (!selectedTrip) return null;
 
   return (
@@ -336,10 +334,14 @@ export default function SeatPicker({
         {bookedAirline === selectedTrip.airline && (
           <Button
             className="mt-2 rounded w-full"
-            onClick={() => router.push("/checkout")}
+            onClick={() =>
+              document.getElementById("booking-summary")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
             variant="brand"
           >
-            Check out
+            Proceed to checkout
           </Button>
         )}
       </div>

@@ -12,6 +12,7 @@ import {
   ChefHat,
   Church,
   Clock,
+  CreditCardIcon,
   Dumbbell,
   Eye,
   Flag,
@@ -89,6 +90,10 @@ export default function Home({
   const [loading, setLoading] = useState<boolean>(false);
 
   const [saved, setSaved] = useState<boolean>(false);
+
+  const [paying, setPaying] = useState<boolean>(false);
+  const [paid, setPaid] = useState<boolean>(false);
+
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [tripDetails, setTripDetails] = useState<{
     airline: string;
@@ -100,7 +105,10 @@ export default function Home({
   } | null>(null);
 
   const [bookedAirline, setBookedAirline] = useState<string>("");
-  const [bookedAccommodation, setBookedAccommodation] = useState<string>("");
+  const [bookedAccommodation, setBookedAccommodation] = useState<{
+    name: string;
+    img: string;
+  } | null>(null);
 
   // when tripDetails is set, scroll to the seat picker
   useEffect(() => {
@@ -108,8 +116,19 @@ export default function Home({
       document.getElementById("seat-picker")?.scrollIntoView({
         behavior: "smooth",
       });
+      setBookedAirline("");
+      setSelectedSeats([]);
+      setPaid(false);
+      setPaying(false);
     }
   }, [tripDetails]);
+
+  useEffect(() => {
+    if (bookedAccommodation?.name) {
+      setPaid(false);
+      setPaying(false);
+    }
+  }, [bookedAccommodation]);
 
   return (
     <div
@@ -388,13 +407,20 @@ export default function Home({
               <Button
                 variant="brand"
                 onClick={() =>
-                  setBookedAccommodation("Lynnwood Boutique House")
+                  setBookedAccommodation({
+                    name: "Lynnwood Boutique House",
+                    img: "/lynnwood.png",
+                  })
                 }
-                disabled={bookedAccommodation === "Lynnwood Boutique House"}
+                disabled={
+                  bookedAccommodation?.name === "Lynnwood Boutique House"
+                }
                 className="gap-2"
               >
-                {bookedAccommodation === "Lynnwood Boutique House" && <Check />}
-                {bookedAccommodation === "Lynnwood Boutique House"
+                {bookedAccommodation?.name === "Lynnwood Boutique House" && (
+                  <Check />
+                )}
+                {bookedAccommodation?.name === "Lynnwood Boutique House"
                   ? "Booked"
                   : "Book now"}
               </Button>
@@ -453,12 +479,17 @@ export default function Home({
               <Button variant="ghost">View details</Button>
               <Button
                 variant="brand"
-                onClick={() => setBookedAccommodation("The Void Homestay")}
-                disabled={bookedAccommodation === "The Void Homestay"}
+                onClick={() =>
+                  setBookedAccommodation({
+                    name: "The Void Homestay",
+                    img: "/the-void.png",
+                  })
+                }
+                disabled={bookedAccommodation?.name === "The Void Homestay"}
                 className="gap-2"
               >
-                {bookedAccommodation === "The Void Homestay" && <Check />}
-                {bookedAccommodation === "The Void Homestay"
+                {bookedAccommodation?.name === "The Void Homestay" && <Check />}
+                {bookedAccommodation?.name === "The Void Homestay"
                   ? "Booked"
                   : "Book now"}
               </Button>
@@ -770,16 +801,169 @@ export default function Home({
             <AccordionContent></AccordionContent>
           </AccordionItem>
         </Accordion>
-      </div>
 
-      <div className="px-8 animate-slide-in opacity-0 [--slide-in-delay:5550ms]">
-        <Button
-          className="mt-2 mb-8 rounded w-full"
-          onClick={() => router.push("/checkout")}
-          variant="brand"
-        >
-          Check out
-        </Button>
+        {(tripDetails || bookedAccommodation) && (
+          <div
+            id="booking-summary"
+            className="mt-4 border p-4 rounded-lg bg-white dark:bg-black"
+          >
+            {paid ? (
+              <div className="flex flex-col items-center justify-center p-4">
+                <div className="p-2 rounded-full bg-brand text-center flex items-center justify-center w-fit">
+                  <Check className="w-8 h-8 text-white" />
+                </div>
+                <div className="mt-4 text-brand dark:text-white text-2xl md:text-4xl font-semibold">
+                  Payment successful
+                </div>
+                <div className="mt-1">
+                  Thanks for your purchase! You will receive an email
+                  confirmation shortly.
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="flex gap-2 items-center justify-between mb-4">
+                  <div className="flex gap-4 items-center">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-full bg-foreground/10">
+                      <CreditCardIcon className="w-4 h-4 inline-block" />
+                    </div>
+                    <div>Visa · · · · 0512</div>
+                  </div>
+                  <div className="px-4 py-2 flex items-center gap-2 rounded-full border text-sm">
+                    <Image
+                      src="/google.png"
+                      width={16}
+                      height={16}
+                      alt="Google"
+                      className="rounded-lg"
+                    />
+                    <div>Pay</div>
+                  </div>
+                </div>
+
+                <div className="md:text-xl lg:text-2xl font-semibold">
+                  Booking summary
+                </div>
+                <Separator className="my-4" />
+                <div className="grid gap-4">
+                  {tripDetails && (
+                    <div className="flex gap-4 items-center">
+                      <Image
+                        src={tripDetails.img}
+                        width={45}
+                        height={45}
+                        alt={tripDetails.airline}
+                        className="rounded-lg w-16 h-16"
+                      />
+                      <div className="w-full">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="font-semibold">
+                            {tripDetails.airline}
+                          </div>
+                          <div className="text-xs">
+                            {selectedSeats.length} seat
+                            {selectedSeats.length > 1 ? "s" : ""} x{" "}
+                            {tripDetails.price}
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm opacity-80">May 25, 2024</div>
+                          <div className="ml-1 flex items-center gap-2">
+                            <span className="text-lg md:text-2xl">
+                              $
+                              {selectedSeats.length *
+                                parseInt(tripDetails.price.slice(1))}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {bookedAccommodation && (
+                    <div className="flex gap-4 items-center">
+                      <Image
+                        src={bookedAccommodation.img}
+                        width={45}
+                        height={45}
+                        alt={bookedAccommodation.name}
+                        className="rounded-lg w-16 h-16"
+                      />
+                      <div className="w-full">
+                        <div>
+                          <span className="font-semibold">
+                            {bookedAccommodation.name}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-sm opacity-80">
+                              Deluxe Room
+                            </div>
+                            <div className="text-sm opacity-80">
+                              May 25, 2024
+                            </div>
+                          </div>
+                          <div className="ml-1 px-2 rounded text-lg md:text-2xl">
+                            $600
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <Separator className="my-4" />
+                <div className="flex gap-2 justify-between items-center">
+                  <div>
+                    <div>Total</div>
+                    <div className="text-xs">
+                      Including{" "}
+                      <span className="font-semibold">
+                        $
+                        {Math.round(
+                          (selectedSeats.length *
+                            parseInt(tripDetails?.price.slice(1) || "0") +
+                            600) *
+                            0.05
+                        )}
+                      </span>{" "}
+                      in taxes
+                    </div>
+                  </div>
+                  <div className="text-2xl md:text-4xl">
+                    $
+                    {selectedSeats.length *
+                      parseInt(tripDetails?.price.slice(1) || "0") +
+                      600 +
+                      Math.round(
+                        (selectedSeats.length *
+                          parseInt(tripDetails?.price.slice(1) || "0") +
+                          600) *
+                          0.05
+                      )}
+                  </div>
+                </div>
+                <button
+                  className={`mt-8 p-2 font-semibold text-xl rounded-full bg-foreground w-full text-background flex gap-2 items-center justify-center ${
+                    paid || paying
+                      ? "opacity-30 cursor-not-allowed"
+                      : "hover:bg-foreground/90"
+                  }`}
+                  onClick={() => {
+                    setPaying(true);
+                    setTimeout(() => {
+                      setPaid(true);
+                      setPaying(false);
+                    }, 2000);
+                  }}
+                  disabled={paid || paying}
+                >
+                  {paid && <Check className="w-6 h-6" />}
+                  {paying ? "Processing..." : paid ? "Paid" : "Pay now"}
+                </button>
+              </>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="sticky bottom-0 w-full p-2 bg-background/50 backdrop-blur-lg flex-none animate-slide-in opacity-0 [--slide-in-delay:450ms]">
