@@ -2,11 +2,13 @@ import { Armchair } from "lucide-react";
 
 export default function Seat({
   id,
+  isBooked,
   isSelected,
   onSelect,
   disabled,
 }: {
   id: string;
+  isBooked: boolean;
   isSelected: boolean;
   onSelect: (id: string) => void;
   disabled?: boolean;
@@ -17,7 +19,9 @@ export default function Seat({
         disabled
           ? "bg-foreground/5 opacity-30 cursor-not-allowed"
           : isSelected
-          ? "bg-black dark:bg-white text-white dark:text-black"
+          ? isBooked
+            ? "bg-brand text-white"
+            : "bg-black dark:bg-white text-white dark:text-black"
           : "bg-foreground/5 hover:bg-foreground/10 transition"
       }`}
       onClick={() => onSelect(id)}

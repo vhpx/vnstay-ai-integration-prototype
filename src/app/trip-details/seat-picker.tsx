@@ -51,6 +51,7 @@ export default function SeatPicker({
         <div className="p-4 grid items-center gap-2 justify-center max-w-sm grid-cols-5">
           <Seat
             id="1"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("1")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -66,6 +67,7 @@ export default function SeatPicker({
           />
           <Seat
             id="2"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("2")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -79,6 +81,7 @@ export default function SeatPicker({
           <div className="text-center font-semibold">4</div>
           <Seat
             id="3"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("3")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -91,6 +94,7 @@ export default function SeatPicker({
           />
           <Seat
             id="4"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("4")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -106,6 +110,7 @@ export default function SeatPicker({
         <div className="p-4 grid items-center gap-2 justify-center max-w-sm grid-cols-5">
           <Seat
             id="5"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("5")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -118,6 +123,7 @@ export default function SeatPicker({
           />
           <Seat
             id="6"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("6")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -134,6 +140,7 @@ export default function SeatPicker({
           <div className="text-center font-semibold">3</div>
           <Seat
             id="7"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("7")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -149,6 +156,7 @@ export default function SeatPicker({
           />
           <Seat
             id="8"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("8")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -167,6 +175,7 @@ export default function SeatPicker({
         <div className="p-4 grid items-center gap-2 justify-center max-w-sm grid-cols-5">
           <Seat
             id="9"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("9")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -179,6 +188,7 @@ export default function SeatPicker({
           />
           <Seat
             id="10"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("10")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -197,6 +207,7 @@ export default function SeatPicker({
           <div className="text-center font-semibold">2</div>
           <Seat
             id="11"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("11")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -214,6 +225,7 @@ export default function SeatPicker({
           />
           <Seat
             id="12"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("12")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -234,6 +246,7 @@ export default function SeatPicker({
         <div className="p-4 grid items-center gap-2 justify-center max-w-sm grid-cols-5">
           <Seat
             id="13"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("13")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -251,6 +264,7 @@ export default function SeatPicker({
           />
           <Seat
             id="14"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("14")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -266,6 +280,7 @@ export default function SeatPicker({
           <div className="text-center font-semibold">1</div>
           <Seat
             id="15"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("15")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
@@ -280,6 +295,7 @@ export default function SeatPicker({
           />
           <Seat
             id="16"
+            isBooked={bookedAirline === selectedTrip.airline}
             isSelected={selectedSeats.includes("16")}
             onSelect={() =>
               bookedAirline === selectedTrip.airline
