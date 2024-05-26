@@ -65,15 +65,15 @@ export default function Home() {
             loading={showLoading}
             setLoading={setLoading}
             onClick={() => {
-              if (
-                range?.from &&
-                range?.to &&
-                (range.from < new Date() || range.to < new Date())
-              ) {
-                setShowError(true);
-                setLoading(false);
-                return;
-              }
+              // if (
+              //   range?.from &&
+              //   range?.to &&
+              //   (range.from < new Date() || range.to < new Date())
+              // ) {
+              //   setShowError(true);
+              //   setLoading(false);
+              //   return;
+              // }
 
               router.push("/trip-travellers");
             }}
