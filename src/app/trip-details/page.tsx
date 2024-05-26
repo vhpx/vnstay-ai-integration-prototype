@@ -208,7 +208,7 @@ export default function Home({
                   img: "/UA.png",
                 })
               }
-              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mt-2 mx-4 transition rounded-lg"
+              className="flex text-left gap-2 hover:bg-foreground/5 dark:hover:bg-foreground/10 p-4 mt-2 mx-4 transition rounded-lg"
             >
               <Image
                 src="/UA.png"
@@ -250,7 +250,7 @@ export default function Home({
                   img: "/sas.png",
                 })
               }
-              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mx-4 transition rounded-lg"
+              className="flex text-left gap-2 hover:bg-foreground/5 dark:hover:bg-foreground/10 p-4 mx-4 transition rounded-lg"
             >
               <Image
                 src="/sas.png"
@@ -290,7 +290,7 @@ export default function Home({
                   img: "/delta.png",
                 })
               }
-              className="flex text-left gap-2 dark:hover:bg-foreground/10 p-4 mb-4 mx-4 transition rounded-lg"
+              className="flex text-left gap-2 hover:bg-foreground/5 dark:hover:bg-foreground/10 p-4 mb-4 mx-4 transition rounded-lg"
             >
               <Image
                 src="/delta.png"

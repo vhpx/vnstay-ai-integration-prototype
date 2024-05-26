@@ -13,12 +13,12 @@ export default function Seat({
 }) {
   return (
     <button
-      className={`w-12 h-12 bg-foreground/5 rounded-lg flex items-center justify-center ${
+      className={`w-12 h-12 rounded-lg flex items-center justify-center ${
         disabled
-          ? "opacity-30 cursor-not-allowed"
+          ? "bg-foreground/5 opacity-30 cursor-not-allowed"
           : isSelected
           ? "bg-black dark:bg-white text-white dark:text-black"
-          : "hover:bg-foreground/10 transition"
+          : "bg-foreground/5 hover:bg-foreground/10 transition"
       }`}
       onClick={() => onSelect(id)}
       disabled={disabled}
