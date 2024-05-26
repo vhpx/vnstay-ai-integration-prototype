@@ -33,7 +33,7 @@ export default function RootLayout({
           <NavbarPadding>
             <main className="grid md:flex flex-1 min-h-full">
               <Sidebar />
-              <div className="overflow-y-auto h-[calc(100vh-67px)] w-full">
+              <div className="overflow-y-auto h-[calc(100vh-68px)] w-full">
                 {children}
               </div>
             </main>

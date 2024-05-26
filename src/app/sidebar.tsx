@@ -18,7 +18,7 @@ export default function Sidebar() {
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   return (
-    <div className="border-r hidden h-[calc(100vh-67px)] bg-white dark:bg-black text-sm p-4 md:flex flex-col justify-between gap-2 w-[24rem] lg:w-[32rem]">
+    <div className="border-r hidden h-[calc(100vh-68px)] bg-white dark:bg-black text-sm p-4 md:flex flex-col justify-between gap-2 w-[24rem] lg:w-[32rem]">
       <div className="grid gap-2">
         <Link
           href="/"
