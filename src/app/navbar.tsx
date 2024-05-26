@@ -67,14 +67,14 @@ export default function Navbar() {
           </Link>
 
           <div className="mb-3 flex items-center gap-2">
-            <Button
+            {/* <Button
               variant="brand"
               className="hidden md:block uppercase transition h-fit px-4 py-2 font-semibold"
             >
               Chat with AI
-            </Button>
+            </Button> */}
+            {/* <ThemeToggle /> */}
 
-            {/* <ThemeToggle className="" /> */}
             <UserNav />
           </div>
         </div>
