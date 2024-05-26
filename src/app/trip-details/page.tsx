@@ -808,7 +808,7 @@ export default function Home({
             className="mt-4 border p-4 rounded-lg bg-white dark:bg-black"
           >
             {paid ? (
-              <div className="flex flex-col items-center justify-center p-4">
+              <div className="flex flex-col text-center items-center justify-center p-4">
                 <div className="p-2 rounded-full bg-brand text-center flex items-center justify-center w-fit">
                   <Check className="w-8 h-8 text-white" />
                 </div>
